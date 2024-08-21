@@ -1,0 +1,17 @@
+.active { 
+    border-bottom: #ea580c solid 2px;
+}
+.header-img{
+    position: relative;
+    display: inline-block;
+}
+
+.header-img:after {
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(rgba(18, 18, 18, 0) 98%,rgba(0, 0, 0, 1) 100%);
+}
