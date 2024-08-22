@@ -29,14 +29,14 @@ export default function MovieLists() {
   return (
     <div className="mx-2 my-8 sm:mx-24">
       <div className="flex items-center justify-between">
-        <span className="font-bold text-sm sm:text-xl">Trending Movies</span>
-        <button className="px-3 sm:px-6 border-2 text-xs sm:text-lg border-white rounded-xl sm:rounded-2xl font-bold">
+        <span className="font-bold text-lg sm:text-xl text-[#eee]">Trending Movies</span>
+        <button className="px-3 py-1 sm:px-6 border-2 text-sm sm:text-lg border-white rounded-2xl font-bold">
           View more
         </button>
       </div>
       <div className="mt-3">
         <Swiper
-          slidesPerView={isDesk ? 6 : 2}
+          slidesPerView={isDesk ? 6.5 : 2.5}
           spaceBetween={isDesk ? 15 : 30}
           modules={[Pagination]}
           className=""

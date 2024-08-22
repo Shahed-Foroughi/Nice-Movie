@@ -1,19 +1,24 @@
-// import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useRef } from "react";
+import { HiOutlineHome } from "react-icons/hi2";
+import { MdOutlineMovieCreation } from "react-icons/md";
+import { RiMovie2Line } from "react-icons/ri";
 
 const headerNav = [
   {
     path: "/",
     display: "Home",
+    icon : <HiOutlineHome />
   },
   {
     path: "/movies",
     display: "Movies",
+    icon : <MdOutlineMovieCreation />
   },
   {
     path: "/series",
     display: "series",
+    icon : <RiMovie2Line />
   },
 ];
 
@@ -41,11 +46,12 @@ export default function Navbar() {
             Nice Movies
           </span>
         </Link>
-        <ul className="fixed left-0 right-0 sm:static bg-black sm:bg-transparent bottom-0 py-2 sm:py-0 w-full px-3 sm:w-fit flex items-center justify-between sm:justify-normal sm:gap-7 text-lg font-semibold">
+        <ul className="fixed left-0 right-0 bottom-0 sm:static bg-black sm:bg-transparent w-full h-20 px-3 sm:w-fit flex items-center justify-between sm:justify-normal sm:gap-7 font-semibold">
           {headerNav.map((e, i) => (
             <li className="" key={i}>
-              <NavLink className="" to={e.path}>
-                {e.display}
+              <NavLink className="flex flex-col items-center pt-2" to={e.path}>
+                <span className=" *:text-4xl">{e.icon}</span>
+                <span className="text-lg">{e.display}</span>
               </NavLink>
             </li>
           ))}

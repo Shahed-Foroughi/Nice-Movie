@@ -7,6 +7,12 @@
     background-color: black;
     color: #fff;
   }
+
+  .active { 
+    border-top: #ea580c solid 2px;
+    color: #ea580c;
+
+}
   
   .swiper {
     width: 100%;
