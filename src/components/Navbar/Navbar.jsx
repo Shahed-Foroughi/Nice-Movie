@@ -50,7 +50,7 @@ export default function Navbar() {
           {headerNav.map((e, i) => (
             <li className="" key={i}>
               <NavLink className="flex flex-col items-center pt-2" to={e.path}>
-                <span className=" *:text-4xl">{e.icon}</span>
+                <span className=" *:text-4xl sm:hidden">{e.icon}</span>
                 <span className="text-lg">{e.display}</span>
               </NavLink>
             </li>

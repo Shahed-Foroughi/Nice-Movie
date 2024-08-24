@@ -1,18 +1,18 @@
 // import { Fragment, useEffect, useState } from "react";
-import { useRoutes } from 'react-router-dom'
-import {routes} from './routes'
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { useRoutes } from "react-router-dom";
+import { routes } from "./routes";
+import "swiper/css";
+import "swiper/css/navigation";
+import MovieProvider from "./Context/Context";
 
-// import './styles.css';
 
-function App() {
-  const router = useRoutes(routes)
+
+function App() { 
+  const router = useRoutes(routes);
   return (
-    <div className="w-full">
-      {router}
-    </div>
-
+    <MovieProvider>
+      <div className="">{router}</div>
+   </MovieProvider>
   );
 }
 
