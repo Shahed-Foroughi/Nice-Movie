@@ -1,10 +1,15 @@
-// import React from 'react'
-import Navbar from '../../components/Navbar/Navbar'
+import { MovieContext } from '../../Context/Context';
+import { useContext , useState } from 'react';
+import AllMovies from '../../components/AllMovies/AllMovies';
+
 
 export default function Series() {
+  const moviesContext = useContext(MovieContext);
+  const [series] = useState(moviesContext.series);
+  console.log(series);
   return (
     <div>
-        <Navbar />
+        <AllMovies type = 'Series' movies={series} />
     </div>
   )
 }

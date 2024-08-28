@@ -1,6 +1,4 @@
-import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import Navbar from "../../components/Navbar/Navbar";
 import MovieLists from "../../components/MovieLists/MovieLists";
 import { useContext, useEffect , useState } from "react";
 import {MovieContext} from "../../Context/Context";
@@ -20,11 +18,11 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
-      <MovieLists movies={movies} />
-      <MovieLists movies={series} />
-      <Footer /> 
+      <MovieLists type={'Movies'} movies={movies} />
+      <MovieLists type={'Series'} movies={series} />
+      {/* <Footer />  */}
     </div>
   );
 }

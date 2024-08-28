@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
-// import "./styles.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Header.css";
 import { useContext, useEffect, useState } from "react";
 import { MovieContext } from "../../Context/Context";
 import { Navigation } from "swiper/modules";
+import ModalTrailer from "../Portal/ModalTrailer";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -50,9 +49,11 @@ const item2 = {
   },
 };
 
+
 export default function Header() {
   const movies = useContext(MovieContext);
   const [newestMovies, setNewestMovies] = useState([]);
+  const [showModal , setShowModal] = useState(false)
 
   useEffect(() => {
     const filteringNewestMovies =
@@ -61,6 +62,10 @@ export default function Header() {
       })
       setNewestMovies(filteringNewestMovies)
   } , [movies.movies]);
+
+  const closeModalHandler = (close) => {
+    setShowModal(close)
+  }
 
   return (
     <div className="">
@@ -106,11 +111,13 @@ export default function Header() {
                     <Link
                       // to={`/movie/${""}`}
                       className="bg-orange-600 sm:px-7 sm:py-2 text-white text-sm hover:shadow-[0_0_10px_#ea580c]"
-                      onClick={() => console.log()}
+                      // onClick={() => console.log()}
                     >
                       Watch now
                     </Link>
-                    <Link className=" hover:bg-white text-white hover:text-orange-600 text-sm sm:px-7 sm:py-2 border border-white">
+                    <Link
+                     onClick={() => setShowModal(true)}
+                     className=" hover:bg-white text-white hover:text-orange-600 text-sm sm:px-7 sm:py-2 border border-white">
                       Watch trailer
                     </Link>
                   </motion.li>
@@ -139,6 +146,7 @@ export default function Header() {
           ))}
         </Swiper>
       </div>
+      <ModalTrailer showModal={showModal} closeModalHandler={closeModalHandler}/>
     </div>
   );
 }

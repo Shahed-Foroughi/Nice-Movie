@@ -33,11 +33,44 @@
     object-fit: cover;
   }
 
-  .footer { 
+  .background-filter { 
     background: linear-gradient(rgba(15, 13, 13, 0.85), rgba(15, 13, 13, 0.85)),
     url('../public/image/moviesCollection2.jpg');
     background-repeat: no-repeat;
     background-size: cover;    
-    
+  }
+
+  .background-filter-allmovies::after{
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(rgba(18, 18, 18, 0) 70%,rgba(0, 0, 0, 1) 100%);
+  }
+
+  .movie-card-img::after{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: url('./assets/youtubeicon.svg');
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .movie-card-img:hover::after{
+    visibility: visible;
+    opacity: 1;
+  }
+  .movie-card:hover .movie-card-img::after{
+    visibility: visible;
+    opacity: 1;
   }
 
