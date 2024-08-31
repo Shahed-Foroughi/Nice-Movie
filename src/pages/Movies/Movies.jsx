@@ -5,7 +5,7 @@ import { useContext , useState } from "react";
 export default function Movies() {
   const moviesContext = useContext(MovieContext);
   const [movies] = useState(moviesContext.movies);
-  console.log(movies);
+  // console.log(movies);
  
   
   return (

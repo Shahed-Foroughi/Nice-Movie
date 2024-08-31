@@ -41,7 +41,7 @@ export default function Navbar() {
           to={"/"}
           className=" sm:w-fit gap-2 h-12 flex items-center mx-auto sm:mx-0"
         >
-          <img className="w-10 h-10" src={"image/tmovie.png"} alt="" />
+          <img className="w-10 h-10" src={"../image/tmovie.png"} alt="" />
           <span className="sm:text-3xl font-semibold" to="/">
             Nice Movies
           </span>

@@ -1,0 +1,15 @@
+.background-filter-movie{
+    position: absolute;
+    display: inline-block;
+    top: 0%;
+}
+
+  .background-filter-movie::after {
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(rgb(18, 18, 18 , 0) 50%,rgba(0, 0, 0, 1) 100%);
+}

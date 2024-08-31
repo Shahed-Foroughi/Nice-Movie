@@ -48,7 +48,7 @@ export default function MovieLists(props) {
               key={movie[0]}
               className="movie-card"
             >
-              <Link className="flex flex-col items-start justify-between hover:text-orange-600 gap-2">
+              <Link to={`movie/${movie[1].id}`} className="flex flex-col items-start justify-between hover:text-orange-600 gap-2">
                 <div className="movie-card-img relative ">
                   <img
                     className="rounded-md min-h-[170px] max-h-[170px] sm:min-h-[285px] sm:max-h-[285px] overflow-hidden"

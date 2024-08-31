@@ -7,6 +7,8 @@ export const MovieContext = createContext();
 export default function MovieProvider({children}) {
     const [movies , setMovies] = useState([]);
     const [series , setSeries] = useState([]);
+    const [movieID , setMovieID] = useState(null)
+    const [mainMovie , setMainMovie] = useState({})
     useEffect(() => {
         getAllMovies()
         getAllSeries()
@@ -36,7 +38,7 @@ export default function MovieProvider({children}) {
 
           
     return (
-      <MovieContext.Provider value={{movies , series}}>
+      <MovieContext.Provider value={{movies , series , setMovieID , movieID , setMainMovie , mainMovie}}>
         {children}
       </MovieContext.Provider>
     );
