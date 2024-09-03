@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { HiOutlineHome } from "react-icons/hi2";
 import { MdOutlineMovieCreation } from "react-icons/md";
 import { RiMovie2Line } from "react-icons/ri";
@@ -8,35 +8,38 @@ const headerNav = [
   {
     path: "/",
     display: "Home",
-    icon : <HiOutlineHome />
+    icon: <HiOutlineHome />,
   },
   {
     path: "/movies",
     display: "Movies",
-    icon : <MdOutlineMovieCreation />
+    icon: <MdOutlineMovieCreation />,
   },
   {
     path: "/series",
     display: "series",
-    icon : <RiMovie2Line />
+    icon: <RiMovie2Line />,
   },
 ];
 
 export default function Navbar() {
   const nav = useRef();
-  document.addEventListener("scroll", () => {
-    if (scrollY > 200) {
-      nav.current.style = "background-color : rgba(0 ,0 ,0)";
-    } else if (scrollY < 200) {
-      nav.current.style = "background-color : unset";
-    }
-  });
+  useEffect(() => {
+    document.addEventListener("scroll", () => {      
+      if (scrollY > 50) {
+        nav.current.style.backgroundColor = "rgba(0 ,0 ,0)";
+      } else if (scrollY < 50) {
+        nav.current.style.backgroundColor = "unset";
+      }
+    });
+  }, []);
 
   return (
-    <div ref={nav} className="header fixed w-full sm:w-auto sm:right-0 sm:left-0 top-0 z-50 text-white [text-shadow:_3px_3px_3px_rgb(0_0_0)] sm:py-2 duration-500">
-      <div
-        className="h-14 flex items-center justify-between sm:mx-24"
-      >
+    <div
+      ref={nav}
+      className="header fixed w-full sm:w-auto sm:right-0 sm:left-0 top-0 z-[99] text-white [text-shadow:_3px_3px_3px_rgb(0_0_0)] sm:py-2 duration-500"
+    >
+      <div className="h-14 flex items-center justify-between sm:mx-24">
         <Link
           to={"/"}
           className=" sm:w-fit gap-2 h-12 flex items-center mx-auto sm:mx-0"

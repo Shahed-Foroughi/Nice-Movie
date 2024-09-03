@@ -1,6 +1,4 @@
-// import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -32,9 +30,9 @@ export default function MovieLists(props) {
         <span className="font-bold text-lg sm:text-xl text-[#eee]">
           {props.type}
         </span>
-        <button className="px-3 py-1 sm:px-6 border-2 text-sm sm:text-lg border-white rounded-2xl font-bold">
+        <Link to={`/${props.route1}`} className="px-3 py-1 sm:px-6 border-2 text-sm sm:text-lg border-white rounded-2xl font-bold">
           View more
-        </button>
+        </Link>
       </div>
       <div className="mt-3">
         <Swiper
@@ -48,7 +46,7 @@ export default function MovieLists(props) {
               key={movie[0]}
               className="movie-card"
             >
-              <Link to={`movie/${movie[1].id}`} className="flex flex-col items-start justify-between hover:text-orange-600 gap-2">
+              <Link to={`${props.route2}/${movie[1].id}`} className="flex flex-col items-start justify-between hover:text-orange-600 gap-2">
                 <div className="movie-card-img relative ">
                   <img
                     className="rounded-md min-h-[170px] max-h-[170px] sm:min-h-[285px] sm:max-h-[285px] overflow-hidden"

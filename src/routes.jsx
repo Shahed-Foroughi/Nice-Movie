@@ -13,8 +13,9 @@ const routes = [
   { id: 2, path: "/series", element: <Series /> },
   { id: 3, path: "/register", element: <Register /> },
   { id: 4, path: "/movie/:movieID", element: <Movie /> },
+  { id: 5, path: "/serial/:movieID", element: <Movie /> },
   { id: 6, path: "/offs", element: <Offs /> },
-  { id: 6, path: "/category/:categoryID", element: <Category /> },
+  { id: 7, path: "/category/:categoryID", element: <Category /> },
 ];
 
 export {routes};

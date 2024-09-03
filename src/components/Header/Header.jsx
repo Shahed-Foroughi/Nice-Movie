@@ -109,7 +109,7 @@ export default function Header() {
                     transition={{ duration: 0.3 }}
                   >
                     <Link
-                      // to={`/movie/${""}`}
+                      to={`/movie/${newestMovie[1].id}`}
                       className="bg-orange-600 sm:px-7 sm:py-2 text-white text-sm hover:shadow-[0_0_10px_#ea580c]"
                       // onClick={() => console.log()}
                     >

@@ -20,7 +20,7 @@ export default function ModalTrailer({closeModalHandler , showModal}) {
             src="https://www.youtube.com/embed/98YEaUD8MuU?si=dADQOqQolxJ5jBfN"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
             />
         </div>
       </div>
